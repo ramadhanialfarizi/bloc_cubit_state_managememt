@@ -1,8 +1,13 @@
+import 'package:bloc_cubit_training_app/bloc_cubit/counter_cubit.dart';
 import 'package:bloc_cubit_training_app/screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(BlocProvider(
+    create: (context) => CounterCubit(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -31,6 +36,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+// TIDAK DIPAKAI!!!
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
